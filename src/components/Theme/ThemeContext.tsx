@@ -3,7 +3,8 @@ import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './themes';
 import { ThemeContext } from './ThemeContextValue';
 
-export const ThemeProvider = ({ children }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const ThemeProvider = ({ children } : {children: any}) => {
   const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
