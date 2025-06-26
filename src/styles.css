@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.controls {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+button {
+    padding: 8px 16px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.editor-container {
+    display: flex;
+    gap: 10px;
+}
+
+.editor,
+.tree {
+    width: 50%;
+    height: 500px;
+    border: 1px solid #ccc;
+}
+
+.tree {
+    overflow: auto;
+}
+
+.error {
+    color: red;
+    min-height: 20px;
+    text-align: center;
+}
