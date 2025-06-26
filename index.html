@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>self["MonacoEnvironment"] = (function (paths) {
+          return {
+            globalAPI: false,
+            getWorkerUrl : function (moduleId, label) {
+              var result =  paths[label];
+              if (/^((http:)|(https:)|(file:)|(\/\/))/.test(result)) {
+                var currentUrl = String(window.location);
+                var currentOrigin = currentUrl.substr(0, currentUrl.length - window.location.hash.length - window.location.search.length - window.location.pathname.length);
+                if (result.substring(0, currentOrigin.length) !== currentOrigin) {
+                  var js = '/*' + label + '*/importScripts("' + result + '");';
+                  var blob = new Blob([js], { type: 'application/javascript' });
+                  return URL.createObjectURL(blob);
+                }
+              }
+              return result;
+            }
+          };
+        })({
+  "editorWorkerService": "/jsonify/monacoeditorwork/editor.worker.bundle.js",
+  "css": "/jsonify/monacoeditorwork/css.worker.bundle.js",
+  "html": "/jsonify/monacoeditorwork/html.worker.bundle.js",
+  "json": "/jsonify/monacoeditorwork/json.worker.bundle.js",
+  "typescript": "/jsonify/monacoeditorwork/ts.worker.bundle.js",
+  "javascript": "/jsonify/monacoeditorwork/ts.worker.bundle.js",
+  "less": "/jsonify/monacoeditorwork/css.worker.bundle.js",
+  "scss": "/jsonify/monacoeditorwork/css.worker.bundle.js",
+  "handlebars": "/jsonify/monacoeditorwork/html.worker.bundle.js",
+  "razor": "/jsonify/monacoeditorwork/html.worker.bundle.js"
+});</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON Editor</title>
+  <link rel="stylesheet" href="/jsonify/jsoneditor.min.css" />
+  <script type="module" crossorigin src="/jsonify/assets/index-D_nKb10o.js"></script>
+  <link rel="stylesheet" crossorigin href="/jsonify/assets/index-CPj96pxq.css">
+</head>
+<body>
+<div id="root"></div>
+</body>
+</html>
