@@ -1,5 +1,6 @@
 import * as React from "react";
 import {useEditorContext} from "../EditorContext.tsx";
+import { ThemeSwitcher } from './Theme/ThemeSwitcher';
 
 interface ControlsProps {
     setError: (error: string) => void;
@@ -43,6 +44,7 @@ const Controls: React.FC<ControlsProps> = ({ setError }) => {
             <button onClick={handleValidate}>Validate JSON</button>
             <button onClick={handleCollapse}>Collapse All</button>
             <button onClick={handleExpand}>Expand All</button>
+            <ThemeSwitcher />
         </div>
     );
 };

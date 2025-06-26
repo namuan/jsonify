@@ -22,10 +22,15 @@ const JsonEditor: React.FC = () => {
         jsonContent,
         setJsonContent,
     };
-    return (<EditorContext.Provider value={contextValue}>
-        <div className="container"><h1>JSON Editor & Formatter</h1>                <Controls setError={setError}/>
-            <div className="editor-container"><MonacoEditor setError={setError}/> <JsonTree setError={setError}/></div>
-            <ErrorDisplay error={error}/></div>
-    </EditorContext.Provider>);
+    return (
+        <EditorContext.Provider value={contextValue}>
+            <div className="container"><Controls setError={setError}/>
+                <div className="editor-container">
+                    <MonacoEditor setError={setError}/>
+                    <JsonTree setError={setError}/>
+                </div>
+                <ErrorDisplay error={error}/></div>
+        </EditorContext.Provider>
+    );
 };
 export default JsonEditor;
