@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import * as monaco from 'monaco-editor';
-import { useEditorContext } from '../JsonEditor';
+import { useEditorContext } from '../EditorContext';
 
 interface MonacoEditorProps {
     setError: (error: string) => void;
@@ -27,7 +27,7 @@ const MonacoEditor: React.FC<MonacoEditorProps> = ({ setError }) => {
                 try {
                     JSON.parse(value);
                     setError('');
-                } catch (e) {
+                } catch {
                     setError('Invalid JSON');
                 }
             });
@@ -37,7 +37,7 @@ const MonacoEditor: React.FC<MonacoEditorProps> = ({ setError }) => {
                 subscription.dispose();
             };
         }
-    }, [setMonacoEditor, setJsonContent, setError]);
+    }, [setMonacoEditor, setJsonContent, setError, jsonContent]);
 
     return <div ref={monacoRef} className="editor" />;
 };

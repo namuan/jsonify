@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import JSONEditor from 'jsoneditor';
-import { useEditorContext } from '../JsonEditor';
+import { useEditorContext } from '../EditorContext';
+import * as React from "react";
 
 interface JsonTreeProps {
     setError: (error: string) => void;
@@ -23,7 +24,7 @@ const JsonTree: React.FC<JsonTreeProps> = ({ setError }) => {
 
             try {
                 jsonEditor.set(JSON.parse(jsonContent));
-            } catch (e) {
+            } catch {
                 setError('Initial JSON invalid');
             }
 

@@ -1,4 +1,5 @@
-import { useEditorContext } from '../JsonEditor';
+import * as React from "react";
+import {useEditorContext} from "../EditorContext.tsx";
 
 interface ControlsProps {
     setError: (error: string) => void;
