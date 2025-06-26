@@ -15,6 +15,9 @@ const JsonTree: React.FC<JsonTreeProps> = ({ setError }) => {
         if (treeRef.current) {
             const jsonEditor = new JSONEditor(treeRef.current, {
                 mode: 'tree',
+                mainMenuBar: true,
+                navigationBar: true,
+                statusBar: true,
                 onChangeText: (jsonString: string) => {
                     setJsonContent(jsonString);
                 },

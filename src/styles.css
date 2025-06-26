@@ -28,9 +28,10 @@ button {
     margin: 0 5px;
     cursor: pointer;
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: white;
     border: none;
     border-radius: 4px;
+    font-weight: 500;
 }
 
 button:hover {
@@ -48,6 +49,11 @@ button:hover {
     width: 50%;
     height: 100%;
     border: 1px solid #ccc;
+    overflow: auto;
+}
+
+.tree .jsoneditor {
+    height: 100%;
 }
 
 .tree {
